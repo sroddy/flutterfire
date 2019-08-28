@@ -8,6 +8,13 @@
 #import "GoogleMobileAds/GoogleMobileAds.h"
 
 @implementation FLTRequestFactory
+static FLTAdRequestMiddleware _bannerAdRequestMiddleware;
++ (FLTAdRequestMiddleware) bannerAdRequestMiddleware {
+  return _bannerAdRequestMiddleware;
+}
++ (void) setBannerAdRequestMiddleware:(FLTAdRequestMiddleware) newValue {
+  _bannerAdRequestMiddleware = newValue;
+}
 
 NSDictionary *_targetingInfo;
 

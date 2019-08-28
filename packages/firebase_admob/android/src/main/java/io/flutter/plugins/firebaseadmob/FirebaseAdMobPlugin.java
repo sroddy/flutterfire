@@ -18,6 +18,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class FirebaseAdMobPlugin implements MethodCallHandler {
+  public static AdRequestMiddleware setAdRequest;
 
   private final Registrar registrar;
   private final MethodChannel channel;

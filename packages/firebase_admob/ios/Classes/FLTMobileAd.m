@@ -133,7 +133,12 @@ GADAdSize _adSize;
   _banner.adUnitID = adUnitId;
   _banner.rootViewController = [FLTMobileAd rootViewController];
   FLTRequestFactory *factory = [[FLTRequestFactory alloc] initWithTargetingInfo:targetingInfo];
-  [_banner loadRequest:[factory createRequest]];
+  GADRequest *request = [factory createRequest];
+  if (FLTRequestFactory.setAdRequest != nil) {
+    FLTRequestFactory.setAdRequest(_banner, request);
+  }
+
+  [_banner loadRequest:request];
 }
 
 - (void)show {

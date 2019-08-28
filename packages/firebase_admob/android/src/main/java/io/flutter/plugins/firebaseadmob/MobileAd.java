@@ -140,7 +140,11 @@ abstract class MobileAd extends AdListener {
       adView.setAdListener(this);
 
       AdRequestBuilderFactory factory = new AdRequestBuilderFactory(targetingInfo);
-      adView.loadAd(factory.createAdRequestBuilder().build());
+      AdRequest.Builder builder = factory.createAdRequestBuilder();
+      if (FirebaseAdMobPlugin.setAdRequest != null) {
+        FirebaseAdMobPlugin.setAdRequest.setAdRequest(activity, adView, builder);
+      }
+      adView.loadAd(builder.build());
     }
 
     @Override
