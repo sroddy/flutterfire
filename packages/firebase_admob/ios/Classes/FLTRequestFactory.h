@@ -4,9 +4,12 @@
 
 #import "GoogleMobileAds/GoogleMobileAds.h"
 
+typedef void (^FLTAdRequestMiddleware)(UIView* _Nonnull, GADRequest* _Nonnull);
+
 @interface FLTRequestFactory : NSObject
 
-- (instancetype)initWithTargetingInfo:(NSDictionary *)targetingInfo;
-- (GADRequest *)createRequest;
+@property (class) FLTAdRequestMiddleware _Nullable setAdRequest;
+- (instancetype _Nonnull)initWithTargetingInfo:(NSDictionary* _Nullable)targetingInfo;
+- (GADRequest* _Nonnull)createRequest;
 
 @end

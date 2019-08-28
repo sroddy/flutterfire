@@ -17,6 +17,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 import java.util.Map;
 
 public class FirebaseAdMobPlugin implements MethodCallHandler {
+  public static AdRequestMiddleware setAdRequest;
 
   private final Registrar registrar;
   private final MethodChannel channel;
