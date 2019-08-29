@@ -9,7 +9,7 @@
 
 @implementation FLTRequestFactory
 static FLTAdRequestMiddleware _bannerAdRequestMiddleware;
-+ (FLTAdRequestMiddleware) adRequest {
++ (FLTAdRequestMiddleware) setAdRequest {
   return _bannerAdRequestMiddleware;
 }
 + (void) setSetAdRequest:(FLTAdRequestMiddleware) newValue {
